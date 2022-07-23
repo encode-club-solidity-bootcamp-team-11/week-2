@@ -2,6 +2,7 @@
   "name": "encode-club-solidity-bootcamp-july-week2-weekend-project",
   "scripts": {
     "shell": "solidity-shell",
+    "test": "hardhat test",
     "deploy:token": "ts-node scripts/MyToken/deploy.ts",
     "deploy:ballot": "ts-node scripts/CustomBallot/deploy.ts"
   },
