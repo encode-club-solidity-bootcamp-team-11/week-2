@@ -33,7 +33,7 @@ Proposals:
 Proposal N. 1: proposal1
 Proposal N. 2: proposal2
 Deploying Ballot contract
-Contract deployed at 0xf6B126888B95862B0e517A1E0459Ac87C2e4C60E
+Contract deployed at 0x6e3D6d2B00e40377eDA4dD5FB7b0FA8C4f8ebdAf
 ```
 
 ## Team (Group 11)
