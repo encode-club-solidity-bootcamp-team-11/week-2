@@ -1,10 +1,5 @@
 # Encode Club-Solidity Bootcamp July - Weekend Proejct (Week 2)
 
-* Create Github Issues with your questions about this lesson
-* Read the references
-* (Optional) Study how ERC20Permit works https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20Permit
-* (Optional) Study and try out a full governance example from https://docs.openzeppelin.com/contracts/4.x/governance
-
 # Weekend project
 * Form groups of 3 to 5 students
 * Complete the contracts together
