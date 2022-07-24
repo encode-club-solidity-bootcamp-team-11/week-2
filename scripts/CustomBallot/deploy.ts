@@ -10,7 +10,7 @@ const EXPOSED_KEY =
 async function main() {
   const wallet = getWallet();
   console.log(`Using address ${wallet.address}`);
-
+  // console.log(process.argv);
   const tokenContractAddress = process.argv[2];
   if (!tokenContractAddress || tokenContractAddress.length == 0) {
     throw new Error("Missing token contract address");

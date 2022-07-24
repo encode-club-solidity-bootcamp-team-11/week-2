@@ -17,7 +17,7 @@ describe("CustomBallot", function () {
   beforeEach(async () => {
     accounts = await ethers.getSigners();
     ballotContractFactory = await ethers.getContractFactory("CustomBallot");
-
+    console.log(ballotContractFactory);
     tokenContractFactory = await ethers.getContractFactory("MyToken");
     tokenContract = await tokenContractFactory.deploy();
     await tokenContract.deployed();
