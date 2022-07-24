@@ -20,20 +20,49 @@ yarn install
 yarn run test
 ```
 
-## Run Deployment Scripts
+## Run Scripts
 ```shell
 $ yarn run deploy:token
 Using address 0xBa0ed6208bfa4d26DD610F14B2B01D630E20Db00
 Deploying MyToken contract
-Contract deployed at 0x232cc383BA1E98812b86895723F2Af215D649EB5
+Contract deployed at 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C
 
-$ yarn run deploy:ballot 0x232cc383BA1E98812b86895723F2Af215D649EB5 proposal1 proposal2
+$ yarn ts-node scripts/MyToken/mint.ts 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C 0x7e44cEec2bdFCa3c417e0eFe80d44AC6448fC7a3 10
+Using address 0xBa0ed6208bfa4d26DD610F14B2B01D630E20Db00
+Attached token contract at 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C
+Before minting voter account balance: 0.0
+Minting to voter account balance
+After minting voter account balance: 10.0
+
+$ yarn ts-node scripts/MyToken/delegate.ts 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C 0x7e44cEec2bdFCa3c417e0eFe80d44AC6448fC7a3
+Using address 0x7e44cEec2bdFCa3c417e0eFe80d44AC6448fC7a3
+Attached token contract at 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C
+Before delegating vote count: 0.0
+Delegate to address: 0x7e44cEec2bdFCa3c417e0eFe80d44AC6448fC7a3
+After delegating vote count: 10.0
+
+$ yarn run deploy:ballot 0x988C28b44d87A13F363D407EBfBf7c8E70a9C08C proposal1 proposal2 proposal3
 Using address 0xBa0ed6208bfa4d26DD610F14B2B01D630E20Db00
 Proposals:
 Proposal N. 1: proposal1
 Proposal N. 2: proposal2
+Proposal N. 3: proposal3
 Deploying Ballot contract
-Contract deployed at 0x6e3D6d2B00e40377eDA4dD5FB7b0FA8C4f8ebdAf
+Contract deployed at 0x4Bb9E795aDfEdF2CB0B2042eB2F4AC98E79eC001
+
+$ yarn ts-node scripts/CustomBallot/vote.ts 0x4Bb9E795aDfEdF2CB0B2042eB2F4AC98E79eC001 1 5
+Using address 0x7e44cEec2bdFCa3c417e0eFe80d44AC6448fC7a3
+Attached ballot contract at 0x4Bb9E795aDfEdF2CB0B2042eB2F4AC98E79eC001
+Before voting
+proposal(1) has voted count: 0.0
+account has voting power : 10.0
+account has spent votes : 0.0
+Vote on proposal(1)
+After voting
+proposal(1) has voted count: 5.0
+account has voting power : 5.0
+account has spent votes : 5.0
+The winner proposal: proposal2
 ```
 
 ## Team (Group 11)

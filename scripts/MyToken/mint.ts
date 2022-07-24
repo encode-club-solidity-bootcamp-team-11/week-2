@@ -28,9 +28,9 @@ async function main() {
   console.log(`Attached token contract at ${tokenContract.address}`);
 
   const beforeMintVoterBalance = await tokenContract.balanceOf(voterAccountAddress);
-  console.log(`Before minting voter's balance: ${ethers.utils.formatEther(beforeMintVoterBalance)}`);
+  console.log(`Before minting voter account balance: ${ethers.utils.formatEther(beforeMintVoterBalance)}`);
 
-  console.log("Minting to voter's balance");
+  console.log("Minting to voter account balance");
   const mintTx = await tokenContract.mint(
     voterAccountAddress,
     ethers.utils.parseEther(Number(baseVotePower).toFixed(18))
@@ -38,7 +38,7 @@ async function main() {
   await mintTx.wait();
 
   const afterMintVoterBalance = await tokenContract.balanceOf(voterAccountAddress);
-  console.log(`After minting voter's balance: ${ethers.utils.formatEther(afterMintVoterBalance)}`);
+  console.log(`After minting voter account balance: ${ethers.utils.formatEther(afterMintVoterBalance)}`);
 }
 
 function getWallet(): Wallet {
