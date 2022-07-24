@@ -1,6 +1,7 @@
 import { ethers, Wallet } from "ethers";
 import "dotenv/config";
 import * as ballotJson from "../../artifacts/contracts/CustomBallot.sol/CustomBallot.json"
+import { CustomBallot } from "../../typechain-types";
 
 // This key is already public on Herong's Tutorial Examples - v1.03, by Dr. Herong Yang
 // Do never expose your keys like this
@@ -25,7 +26,7 @@ async function main() {
   const ballotContract = await ballotContractFactory.deploy(
     proposals.map((s) => ethers.utils.formatBytes32String(s)),
     tokenContractAddress
-  );
+  ) as CustomBallot;
   await ballotContract.deployed();
   console.log(`Contract deployed at ${ballotContract.address}`);
 }
