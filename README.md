@@ -22,7 +22,7 @@ yarn run test
 
 ## Team (Group 11)
 
-* Phonso (breedmasterswag#2193)
+* Alphonso Miguel T. Balagtas (breedmasterswag#2193)
 * cypherx#2778
 * Samnang Chhun (samnang#5278)
 * Sereyboth Chamroeun (sereyboth#7251)
