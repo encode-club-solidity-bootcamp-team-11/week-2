@@ -25,11 +25,12 @@ contract CustomBallot {
     mapping(address => uint256) private _spentVotePower;
 
     constructor(bytes32[] memory proposalNames, address voteToken) {
+        _voteToken = IERC20Votes(voteToken);
+        _referenceBlock = block.number;
+
         for (uint256 i = 0; i < proposalNames.length; i++) {
             _proposals.push(Proposal({name: proposalNames[i], voteCount: 0}));
         }
-        _voteToken = IERC20Votes(voteToken);
-        _referenceBlock = block.number;
     }
 
     function proposals(uint256 index) external view returns(Proposal memory) {
@@ -43,8 +44,10 @@ contract CustomBallot {
     function vote(uint256 proposal, uint256 amount) external {
         uint256 votingPowerAvailable = votingPower();
         require(votingPowerAvailable >= amount, "Has not enough voting power");
+
         _spentVotePower[msg.sender] += amount;
         _proposals[proposal].voteCount += amount;
+
         emit Voted(msg.sender, proposal, amount, _proposals[proposal].voteCount);
     }
 
